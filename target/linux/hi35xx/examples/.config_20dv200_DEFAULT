@@ -1289,7 +1289,9 @@ CONFIG_BUSYBOX_CONFIG_FEATURE_EDITING=y
 CONFIG_BUSYBOX_CONFIG_FEATURE_EDITING_MAX_LEN=512
 # CONFIG_BUSYBOX_CONFIG_FEATURE_EDITING_VI is not set
 CONFIG_BUSYBOX_CONFIG_FEATURE_EDITING_HISTORY=256
-# CONFIG_BUSYBOX_CONFIG_FEATURE_EDITING_SAVEHISTORY is not set
+CONFIG_BUSYBOX_CONFIG_FEATURE_EDITING_SAVEHISTORY=y
+# CONFIG_BUSYBOX_CONFIG_FEATURE_EDITING_SAVE_ON_EXIT is not set
+# CONFIG_BUSYBOX_CONFIG_FEATURE_REVERSE_SEARCH is not set
 CONFIG_BUSYBOX_CONFIG_FEATURE_TAB_COMPLETION=y
 # CONFIG_BUSYBOX_CONFIG_FEATURE_USERNAME_COMPLETION is not set
 CONFIG_BUSYBOX_CONFIG_FEATURE_EDITING_FANCY_PROMPT=y
@@ -1603,10 +1605,18 @@ CONFIG_BUSYBOX_CONFIG_HALT=y
 CONFIG_BUSYBOX_CONFIG_FEATURE_SHADOWPASSWDS=y
 # CONFIG_BUSYBOX_CONFIG_USE_BB_PWD_GRP is not set
 # CONFIG_BUSYBOX_CONFIG_USE_BB_CRYPT is not set
-# CONFIG_BUSYBOX_CONFIG_ADDUSER is not set
-# CONFIG_BUSYBOX_CONFIG_ADDGROUP is not set
-# CONFIG_BUSYBOX_CONFIG_DELUSER is not set
-# CONFIG_BUSYBOX_CONFIG_DELGROUP is not set
+CONFIG_BUSYBOX_CONFIG_ADDUSER=y
+# CONFIG_BUSYBOX_CONFIG_FEATURE_ADDUSER_LONG_OPTIONS is not set
+# CONFIG_BUSYBOX_CONFIG_FEATURE_CHECK_NAMES is not set
+CONFIG_BUSYBOX_CONFIG_LAST_ID=0
+CONFIG_BUSYBOX_CONFIG_FIRST_SYSTEM_ID=0
+CONFIG_BUSYBOX_CONFIG_LAST_SYSTEM_ID=0
+CONFIG_BUSYBOX_CONFIG_ADDGROUP=y
+# CONFIG_BUSYBOX_CONFIG_FEATURE_ADDGROUP_LONG_OPTIONS is not set
+# CONFIG_BUSYBOX_CONFIG_FEATURE_ADDUSER_TO_GROUP is not set
+CONFIG_BUSYBOX_CONFIG_DELUSER=y
+CONFIG_BUSYBOX_CONFIG_DELGROUP=y
+# CONFIG_BUSYBOX_CONFIG_FEATURE_DEL_USER_FROM_GROUP is not set
 # CONFIG_BUSYBOX_CONFIG_GETTY is not set
 CONFIG_BUSYBOX_CONFIG_LOGIN=y
 # CONFIG_BUSYBOX_CONFIG_LOGIN_SESSION_AS_CHILD is not set
@@ -1618,7 +1628,9 @@ CONFIG_BUSYBOX_CONFIG_FEATURE_PASSWD_WEAK_CHECK=y
 # CONFIG_BUSYBOX_CONFIG_CRYPTPW is not set
 CONFIG_BUSYBOX_CONFIG_CHPASSWD=y
 CONFIG_BUSYBOX_CONFIG_FEATURE_DEFAULT_PASSWD_ALGO="md5"
-# CONFIG_BUSYBOX_CONFIG_SU is not set
+CONFIG_BUSYBOX_CONFIG_SU=y
+# CONFIG_BUSYBOX_CONFIG_FEATURE_SU_SYSLOG is not set
+# CONFIG_BUSYBOX_CONFIG_FEATURE_SU_CHECKS_SHELLS is not set
 # CONFIG_BUSYBOX_CONFIG_SULOGIN is not set
 # CONFIG_BUSYBOX_CONFIG_VLOCK is not set
 
@@ -2074,12 +2086,12 @@ CONFIG_PACKAGE_wireless-tools=m
 # CONFIG_PACKAGE_zabbix-sender is not set
 # CONFIG_PACKAGE_zabbix-server is not set
 # CONFIG_PACKAGE_debootstrap is not set
-# CONFIG_PACKAGE_htop is not set
+CONFIG_PACKAGE_htop=m
 # CONFIG_PACKAGE_monit is not set
 # CONFIG_PACKAGE_monit-nossl is not set
 # CONFIG_PACKAGE_muninlite is not set
 # CONFIG_PACKAGE_nrpe is not set
-# CONFIG_PACKAGE_sudo is not set
+CONFIG_PACKAGE_sudo=m
 # CONFIG_PACKAGE_webadmin is not set
 
 #
@@ -2850,14 +2862,14 @@ CONFIG_PACKAGE_luasocket=y
 #
 # Compression
 #
-# CONFIG_PACKAGE_libbz2 is not set
-# CONFIG_PACKAGE_liblzma is not set
+CONFIG_PACKAGE_libbz2=m
+CONFIG_PACKAGE_liblzma=m
 
 #
 # Filesystem
 #
-# CONFIG_PACKAGE_libacl is not set
-# CONFIG_PACKAGE_libattr is not set
+CONFIG_PACKAGE_libacl=m
+CONFIG_PACKAGE_libattr=m
 # CONFIG_PACKAGE_libext2fs is not set
 # CONFIG_PACKAGE_libfuse is not set
 # CONFIG_PACKAGE_libow is not set
@@ -3080,7 +3092,7 @@ CONFIG_PACKAGE_libpolarssl=y
 # CONFIG_PACKAGE_fftw3 is not set
 # CONFIG_PACKAGE_fftw3f is not set
 # CONFIG_PACKAGE_fftw3l is not set
-# CONFIG_PACKAGE_glib2 is not set
+CONFIG_PACKAGE_glib2=m
 # CONFIG_PACKAGE_jansson is not set
 # CONFIG_PACKAGE_libaio is not set
 # CONFIG_PACKAGE_libantlr3c is not set
@@ -3096,7 +3108,7 @@ CONFIG_PACKAGE_libpolarssl=y
 # CONFIG_PACKAGE_libavahi-nodbus-support is not set
 # CONFIG_PACKAGE_libavl is not set
 # CONFIG_PACKAGE_libbfd is not set
-# CONFIG_PACKAGE_libblkid is not set
+CONFIG_PACKAGE_libblkid=m
 CONFIG_PACKAGE_libblobmsg-json=y
 # CONFIG_PACKAGE_libcap is not set
 CONFIG_PACKAGE_libcares=m
@@ -3169,7 +3181,7 @@ CONFIG_PACKAGE_libevent2=y
 # CONFIG_PACKAGE_libexslt is not set
 # CONFIG_PACKAGE_libf2fs is not set
 # CONFIG_PACKAGE_libfaad2 is not set
-# CONFIG_PACKAGE_libffi is not set
+CONFIG_PACKAGE_libffi=m
 # CONFIG_PACKAGE_libffmpeg-audio-dec is not set
 # CONFIG_PACKAGE_libffmpeg-custom is not set
 # CONFIG_PACKAGE_libffmpeg-full is not set
@@ -3208,7 +3220,7 @@ CONFIG_PACKAGE_libjson-c=y
 CONFIG_PACKAGE_liblua=y
 # CONFIG_PACKAGE_liblzo is not set
 CONFIG_PACKAGE_libmad=y
-# CONFIG_PACKAGE_libmagic is not set
+CONFIG_PACKAGE_libmagic=m
 # CONFIG_PACKAGE_libmcrypt is not set
 # CONFIG_PACKAGE_libmicrohttpd is not set
 # CONFIG_PACKAGE_libmicrohttpd-no-ssl is not set
@@ -3219,7 +3231,7 @@ CONFIG_PACKAGE_libmad=y
 # CONFIG_PACKAGE_libmodbus is not set
 # CONFIG_PACKAGE_libmosquitto is not set
 CONFIG_PACKAGE_libmosquitto-nossl=m
-# CONFIG_PACKAGE_libmount is not set
+CONFIG_PACKAGE_libmount=m
 # CONFIG_PACKAGE_libmpdclient is not set
 # CONFIG_PACKAGE_libmpeg2 is not set
 # CONFIG_PACKAGE_libmraa is not set
@@ -3266,7 +3278,7 @@ CONFIG_PACKAGE_libpcap=m
 # Configuration
 #
 # CONFIG_PCAP_HAS_USB is not set
-# CONFIG_PACKAGE_libpcre is not set
+CONFIG_PACKAGE_libpcre=m
 # CONFIG_PACKAGE_libpcre16 is not set
 # CONFIG_PACKAGE_libpcrecpp is not set
 # CONFIG_PACKAGE_libpcsclite is not set
@@ -3281,7 +3293,7 @@ CONFIG_PACKAGE_libpopt=y
 # CONFIG_PACKAGE_libradcli is not set
 # CONFIG_PACKAGE_libreadline is not set
 # CONFIG_PACKAGE_libroxml is not set
-# CONFIG_PACKAGE_librpc is not set
+CONFIG_PACKAGE_librpc=m
 # CONFIG_PACKAGE_librrd1 is not set
 # CONFIG_PACKAGE_librtlsdr is not set
 # CONFIG_PACKAGE_libruby is not set
@@ -3293,7 +3305,7 @@ CONFIG_PACKAGE_libpopt=y
 # CONFIG_PACKAGE_libsensors is not set
 # CONFIG_PACKAGE_libshout is not set
 # CONFIG_PACKAGE_libsigcxx is not set
-# CONFIG_PACKAGE_libsmartcols is not set
+CONFIG_PACKAGE_libsmartcols=m
 # CONFIG_PACKAGE_libsndfile is not set
 # CONFIG_PACKAGE_libsocks is not set
 # CONFIG_PACKAGE_libsodium is not set
@@ -3360,7 +3372,7 @@ CONFIG_PACKAGE_libuuid=m
 # CONFIG_PACKAGE_shflags is not set
 CONFIG_PACKAGE_terminfo=y
 # CONFIG_PACKAGE_tinycdb is not set
-# CONFIG_PACKAGE_uclibcxx is not set
+CONFIG_PACKAGE_uclibcxx=m
 # CONFIG_PACKAGE_xmlrpc-c is not set
 # CONFIG_PACKAGE_xmlrpc-c-client is not set
 # CONFIG_PACKAGE_xmlrpc-c-server is not set
@@ -4301,17 +4313,25 @@ CONFIG_PACKAGE_madplay=y
 #
 # Compression
 #
-# CONFIG_PACKAGE_bzip2 is not set
-# CONFIG_PACKAGE_unrar is not set
-# CONFIG_PACKAGE_unzip is not set
-# CONFIG_PACKAGE_xz-utils is not set
-# CONFIG_PACKAGE_zip is not set
+CONFIG_PACKAGE_bzip2=m
+CONFIG_PACKAGE_lzmadec=m
+CONFIG_PACKAGE_lzmainfo=m
+CONFIG_PACKAGE_unrar=m
+CONFIG_PACKAGE_unzip=m
+CONFIG_PACKAGE_xz-utils=m
+# CONFIG_PACKAGE_xz is not set
+# CONFIG_PACKAGE_xzdec is not set
+# CONFIG_PACKAGE_xzdiff is not set
+# CONFIG_PACKAGE_xzgrep is not set
+# CONFIG_PACKAGE_xzless is not set
+# CONFIG_PACKAGE_xzmore is not set
+CONFIG_PACKAGE_zip=m
 
 #
 # Editors
 #
 # CONFIG_PACKAGE_joe is not set
-# CONFIG_PACKAGE_nano is not set
+CONFIG_PACKAGE_nano=m
 # CONFIG_PACKAGE_vim is not set
 # CONFIG_PACKAGE_vim-full is not set
 # CONFIG_PACKAGE_vim-help is not set
@@ -4402,7 +4422,7 @@ CONFIG_PACKAGE_madplay=y
 #
 # CONFIG_PACKAGE_blkid is not set
 # CONFIG_PACKAGE_cfdisk is not set
-# CONFIG_PACKAGE_fdisk is not set
+CONFIG_PACKAGE_fdisk=m
 # CONFIG_PACKAGE_findfs is not set
 # CONFIG_PACKAGE_hd-idle is not set
 # CONFIG_PACKAGE_hdparm is not set
@@ -4461,7 +4481,7 @@ CONFIG_PACKAGE_empty=m
 CONFIG_PACKAGE_estgb=y
 # CONFIG_PACKAGE_fbtest is not set
 # CONFIG_PACKAGE_fconfig is not set
-# CONFIG_PACKAGE_file is not set
+CONFIG_PACKAGE_file=m
 # CONFIG_PACKAGE_flashrom is not set
 # CONFIG_PACKAGE_flock is not set
 # CONFIG_PACKAGE_freecwmp is not set
@@ -4475,7 +4495,7 @@ CONFIG_PACKAGE_estgb=y
 # CONFIG_PACKAGE_gpio-watch is not set
 # CONFIG_PACKAGE_gpioctl is not set
 # CONFIG_PACKAGE_gpioctl-sysfs is not set
-# CONFIG_PACKAGE_grep is not set
+CONFIG_PACKAGE_grep=m
 # CONFIG_PACKAGE_hamlib is not set
 CONFIG_PACKAGE_haserl=m
 # CONFIG_HASERL_with_lua is not set
@@ -4496,10 +4516,10 @@ CONFIG_PACKAGE_i2c-tools=y
 CONFIG_PACKAGE_iwinfo=m
 # CONFIG_PACKAGE_jpeg-tools is not set
 CONFIG_PACKAGE_jshn=y
-# CONFIG_PACKAGE_kmod is not set
+CONFIG_PACKAGE_kmod=m
 # CONFIG_PACKAGE_ldconfig is not set
-# CONFIG_PACKAGE_ldd is not set
-# CONFIG_PACKAGE_less is not set
+CONFIG_PACKAGE_ldd=m
+CONFIG_PACKAGE_less=m
 # CONFIG_PACKAGE_less-wide is not set
 # CONFIG_PACKAGE_libhavege is not set
 # CONFIG_PACKAGE_libimobiledevice-utils is not set
@@ -4517,7 +4537,18 @@ CONFIG_PACKAGE_littlewire=m
 # CONFIG_PACKAGE_lxc is not set
 # CONFIG_PACKAGE_maccalc is not set
 # CONFIG_PACKAGE_macchanger is not set
-# CONFIG_PACKAGE_mc is not set
+CONFIG_PACKAGE_mc=m
+
+#
+# Configuration
+#
+# CONFIG_MC_DIFFVIEWER is not set
+# CONFIG_MC_EDITOR is not set
+# CONFIG_MC_SUBSHELL is not set
+# CONFIG_MC_LARGEFILE is not set
+# CONFIG_MC_BACKGROUND is not set
+# CONFIG_MC_CHARSET is not set
+# CONFIG_MC_VFS is not set
 # CONFIG_PACKAGE_mcookie is not set
 # CONFIG_PACKAGE_mdadm is not set
 CONFIG_PACKAGE_megatec=m
@@ -4564,7 +4595,7 @@ CONFIG_PACKAGE_prometheus-node-exporter-lua=y
 # CONFIG_PACKAGE_sane-backends is not set
 # CONFIG_PACKAGE_sane-daemon is not set
 # CONFIG_PACKAGE_sane-frontends is not set
-# CONFIG_PACKAGE_screen is not set
+CONFIG_PACKAGE_screen=m
 # CONFIG_PACKAGE_serialconsole is not set
 # CONFIG_PACKAGE_shadow-utils is not set
 # CONFIG_PACKAGE_shtool is not set
@@ -4578,9 +4609,9 @@ CONFIG_PACKAGE_prometheus-node-exporter-lua=y
 CONFIG_PACKAGE_sshpass=y
 # CONFIG_PACKAGE_stm32flash is not set
 # CONFIG_PACKAGE_stoken is not set
-# CONFIG_PACKAGE_strace is not set
+CONFIG_PACKAGE_strace=m
 # CONFIG_PACKAGE_sumo is not set
-# CONFIG_PACKAGE_tar is not set
+CONFIG_PACKAGE_tar=m
 # CONFIG_PACKAGE_taskwarrior is not set
 # CONFIG_PACKAGE_tcsh is not set
 # CONFIG_PACKAGE_tiff-utils is not set
@@ -4606,4 +4637,4 @@ CONFIG_PACKAGE_usbreset=y
 # CONFIG_PACKAGE_yanglint is not set
 # CONFIG_PACKAGE_yunbridge is not set
 # CONFIG_PACKAGE_zsh is not set
-CONFIG_OVERRIDE_PKGS="libnetfilter-cttimeout libnetfilter-cthelper libnetfilter-queue"
+CONFIG_OVERRIDE_PKGS="libnetfilter-queue libnetfilter-cthelper libnetfilter-cttimeout"
