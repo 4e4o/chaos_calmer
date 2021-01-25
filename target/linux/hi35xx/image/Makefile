@@ -79,6 +79,10 @@ endef
 
 # Build commands that can be called from Device/* templates
 define Build/uImage
+    $(if $(filter $(KERNEL_PATCHVER), 3.18.20 4.9.37),
+        $(call Image/BuildDTB,$(DTS_DIR)/hi35$(SUBTARGET)-demb.dts,$(DTS_DIR)/hi35$(SUBTARGET).dtb)
+    )
+
     mkimage -A $(LINUX_KARCH) \
         -O linux -T kernel \
         -C $(1) -a $(KERNEL_LOADADDR) -e $(if $(KERNEL_ENTRY),$(KERNEL_ENTRY),$(KERNEL_LOADADDR)) \
