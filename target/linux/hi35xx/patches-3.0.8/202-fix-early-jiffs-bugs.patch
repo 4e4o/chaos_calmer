@@ -1,0 +1,12 @@
+diff -urN linux-3.0.8/include/linux/jiffies.h linux-3.0.8_patched/include/linux/jiffies.h
+--- linux-3.0.8/include/linux/jiffies.h	2021-01-25 08:12:43.980000000 -0500
++++ linux-3.0.8_patched/include/linux/jiffies.h	2021-01-25 08:14:54.680000000 -0500
+@@ -164,7 +164,7 @@
+  * Have the 32 bit jiffies value wrap 5 minutes after boot
+  * so jiffies wrap bugs show up earlier.
+  */
+-#define INITIAL_JIFFIES ((unsigned long)(unsigned int) (-300*HZ))
++#define INITIAL_JIFFIES 0
+ 
+ /*
+  * Change timeval to jiffies, trying to avoid the
